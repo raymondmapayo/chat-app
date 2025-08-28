@@ -21,6 +21,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar";
 
@@ -38,6 +39,7 @@ export function NavUser({
   return (
     <SidebarMenu>
       <SidebarMenuItem>
+        {/* Dropdown User */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
@@ -55,6 +57,7 @@ export function NavUser({
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
+
           <DropdownMenuContent
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
             side={isMobile ? "bottom" : "right"}
@@ -73,6 +76,7 @@ export function NavUser({
                 </div>
               </div>
             </DropdownMenuLabel>
+
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
@@ -102,6 +106,11 @@ export function NavUser({
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+
+        {/* Sidebar Trigger */}
+        <div className={`mt-3 ${isMobile ? "mb-5 flex justify-center" : ""}`}>
+          <SidebarTrigger className="rounded-lg border px-3 py-2 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition" />
+        </div>
       </SidebarMenuItem>
     </SidebarMenu>
   );
